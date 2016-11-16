@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CheckMySpeech" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,63 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PW8-YN-3JW"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yLx-Rq-y3p">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="4Qo-qz-LCv"/>
+                                    <constraint firstAttribute="height" constant="667" id="RRL-Ed-dRW"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7W-rP-qcn" userLabel="btnMicrophone">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="NZF-ca-bN3"/>
+                                    <constraint firstAttribute="width" constant="70" id="WLp-63-gX2"/>
+                                </constraints>
+                                <state key="normal" image="2mic">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="microphonePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fDk-NE-PlQ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap to record" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5cg-b6-gyU">
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PW8-YN-3JW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0ox-q0-btO"/>
+                            <constraint firstItem="5cg-b6-gyU" firstAttribute="centerX" secondItem="i7W-rP-qcn" secondAttribute="centerX" id="4d6-y2-NDF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5cg-b6-gyU" secondAttribute="bottom" constant="260" id="9Wk-ky-XdR"/>
+                            <constraint firstItem="5cg-b6-gyU" firstAttribute="top" secondItem="i7W-rP-qcn" secondAttribute="bottom" constant="10" id="LBe-lw-uTg"/>
+                            <constraint firstAttribute="bottom" secondItem="yLx-Rq-y3p" secondAttribute="bottom" constant="-20" id="Q6F-3A-nFz"/>
+                            <constraint firstAttribute="trailing" secondItem="yLx-Rq-y3p" secondAttribute="trailing" id="R1l-2N-P7k"/>
+                            <constraint firstItem="yLx-Rq-y3p" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="R5z-ya-6hG"/>
+                            <constraint firstItem="PW8-YN-3JW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Sa3-ad-WAe"/>
+                            <constraint firstItem="PW8-YN-3JW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="iyj-G8-dvb"/>
+                            <constraint firstAttribute="trailing" secondItem="PW8-YN-3JW" secondAttribute="trailing" id="klO-sP-hoy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5cg-b6-gyU" secondAttribute="trailing" constant="52" id="mpn-Mr-c7a"/>
+                            <constraint firstItem="5cg-b6-gyU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="52" id="nWd-WI-Eac"/>
+                            <constraint firstItem="PW8-YN-3JW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="to8-7g-y9b"/>
+                            <constraint firstItem="i7W-rP-qcn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vCX-NB-1NL"/>
+                            <constraint firstItem="yLx-Rq-y3p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="183" id="zrM-Gj-SBc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnMicrophone" destination="i7W-rP-qcn" id="ZVc-vR-QfQ"/>
+                        <outlet property="imView" destination="PW8-YN-3JW" id="Dtd-fE-L6O"/>
+                        <outlet property="imView2" destination="yLx-Rq-y3p" id="scj-f8-s1x"/>
+                        <outlet property="recordText" destination="5cg-b6-gyU" id="whZ-xm-nKH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="103.89805097451276"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="2mic" width="128" height="128"/>
+    </resources>
 </document>
